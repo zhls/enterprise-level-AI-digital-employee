@@ -1,88 +1,301 @@
-// 共享类型定义
+// ==================== 消息类型 ====================
 
-export interface MetricData {
-  name: string;
-  value: number;
-  previousValue: number;
-  change: number;
-  changePercent: number;
-  unit: string;
-  timestamp: number;
+// 多模态内容类型
+export interface MessageContentText {
+  type: 'text'
+  text: string
 }
 
-export interface TrendPoint {
-  timestamp: number;
-  value: number;
+export interface MessageContentImage {
+  type: 'image_url'
+  image_url: {
+    url: string
+  }
 }
 
+export type MessageContent = string | (MessageContentText | MessageContentImage)[]
+
+// 聊天消息（支持多模态）
 export interface ChatMessage {
-  role: 'system' | 'user' | 'assistant';
-  content: string;
+  id: string
+  role: 'user' | 'assistant' | 'system'
+  content: MessageContent
+  timestamp: number
+  thinking?: string // AI思考过程
+  relatedTheorems?: string[] // 相关定理
+  visualAids?: Widget[] // 可视化组件
+}
+
+// ==================== Widget 类型 ====================
+export type WidgetType =
+  | 'text'
+  | 'image'
+  | 'slideshow'
+  | 'formula'
+  | 'diagram'
+  | 'chart'
+  | 'proof_step'
+  | 'example'
+
+export interface Widget {
+  type: WidgetType
+  data: any
+}
+
+export interface ImageWidget {
+  type: 'image'
+  data: {
+    url: string
+    caption?: string
+    alt?: string
+  }
+}
+
+export interface SlideshowWidget {
+  type: 'slideshow'
+  data: {
+    images: Array<{
+      url: string
+      caption?: string
+    }>
+    autoplay?: boolean
+    interval?: number
+  }
+}
+
+export interface FormulaWidget {
+  type: 'formula'
+  data: {
+    latex: string
+    description?: string
+  }
+}
+
+export interface DiagramWidget {
+  type: 'diagram'
+  data: {
+    type: 'geometry' | 'graph' | 'table' | 'tree'
+    content: any
+    description?: string
+  }
+}
+
+export interface ProofStepWidget {
+  type: 'proof_step'
+  data: {
+    step: number
+    title: string
+    content: string
+    visual?: string
+  }
+}
+
+export interface ExampleWidget {
+  type: 'example'
+  data: {
+    problem: string
+    solution: string
+    steps?: string[]
+  }
+}
+
+// ==================== 知识库类型 ====================
+export type SubjectCategory = 'math' | 'physics' | 'chemistry' | 'biology' | 'logic' | 'health'
+export type DifficultyLevel = '基础' | '进阶' | '精通'
+
+export interface Theorem {
+  id: string
+  category: SubjectCategory
+  subject: string
+  topic: string
+  theorem: string
+  difficulty: DifficultyLevel
+
+  description: string
+  formula: string
+  formulaLatex: string
+
+  visualization: {
+    type: string
+    description: string
+    widgets: string[]
+  }
+
+  proofSteps: ProofStep[]
+
+  examples: Example[]
+
+  commonMistakes: CommonMistake[]
+
+  socraticQuestions: string[]
+
+  prerequisites: string[]
+  relatedTheorems: string[]
+
+  teachingTips: string[]
+
+  keywords: string[]
+  embeddingText: string
+}
+
+export interface ProofStep {
+  step: number
+  title: string
+  content: string
+  visual?: string
+}
+
+export interface Example {
+  problem: string
+  solution: string
+  steps?: string[]
+}
+
+export interface CommonMistake {
+  mistake: string
+  correction: string
+}
+
+// ==================== API 类型 ====================
+export interface ApiKeys {
+  modelScopeApiKey?: string
+  xmovAppId?: string
+  xmovAppSecret?: string
 }
 
 export interface ChatRequest {
-  message: string;
-  conversationHistory?: ChatMessage[];
-  currentData?: {
-    metrics?: Record<string, MetricData>;
-    trends?: Record<string, TrendPoint[]>;
-    alerts?: Alert[];
-  };
-  apiKey: string; // 魔搭API密钥，由前端传递
+  message: string
+  images?: string[] // 图片 URL 列表
+  subject?: string
+  topic?: string
+  sessionId: string
+  conversationHistory?: ChatMessage[]
+  userProfile?: UserProfile
+  apiKeys?: ApiKeys
 }
 
-export interface Alert {
-  id: string;
-  level: 'info' | 'warning' | 'critical';
-  message: string;
-  timestamp: number;
-  acknowledged: boolean;
+export interface ChatResponse {
+  success: boolean
+  response?: string
+  thinking?: string
+  relatedTheorems?: TheoremReference[]
+  visualAids?: Widget[]
+  socraticQuestions?: string[]
+  error?: string
 }
 
-export interface ApiResponse<T = any> {
-  success: boolean;
-  data?: T;
-  error?: string;
+export interface TheoremReference {
+  id: string
+  theorem: string
+  description: string
+  relevanceScore: number
 }
 
-// 任务相关类型
-export type TaskPriority = 'low' | 'medium' | 'high' | 'urgent';
-export type TaskStatus = 'pending' | 'in_progress' | 'completed' | 'cancelled';
-export type TaskCategory = 'data_analysis' | 'optimization' | 'investigation' | 'report' | 'other';
-
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  category: TaskCategory;
-  priority: TaskPriority;
-  status: TaskStatus;
-  assignee?: string;
-  createdAt: number;
-  updatedAt: number;
-  dueDate?: number;
-  completedAt?: number;
-  relatedMetric?: string;
-  notes?: string;
+export interface KnowledgeQuery {
+  category?: SubjectCategory
+  topic?: string
+  difficulty?: DifficultyLevel
+  search?: string
+  limit?: number
 }
 
-export interface TaskCreateInput {
-  title: string;
-  description: string;
-  category: TaskCategory;
-  priority: TaskPriority;
-  assignee?: string;
-  dueDate?: number;
-  relatedMetric?: string;
+export interface SearchResult {
+  id: string
+  theorem: string
+  description: string
+  relevanceScore: number
+  category: SubjectCategory
+  difficulty: DifficultyLevel
 }
 
-export interface TaskUpdateInput {
-  title?: string;
-  description?: string;
-  category?: TaskCategory;
-  priority?: TaskPriority;
-  status?: TaskStatus;
-  assignee?: string;
-  dueDate?: number;
-  notes?: string;
+// ==================== 用户类型 ====================
+export interface UserProfile {
+  id?: string
+  gradeLevel: string // 小学/初中/高中/大学
+  subjects: SubjectCategory[]
+  difficulty: DifficultyLevel
+  learningGoals: string[]
+  weakTopics: string[]
+  learningHistory: LearningRecord[]
+}
+
+export interface LearningRecord {
+  theoremId: string
+  studiedAt: number
+  understandingLevel: number // 1-5
+  practiceCount: number
+  correctRate: number
+}
+
+// ==================== 学科状态类型 ====================
+export interface SubjectState {
+  currentSubject: SubjectCategory | null
+  currentTopic: string | null
+  difficulty: DifficultyLevel
+  currentTheorem: Theorem | null
+  learningProgress: LearningProgress
+}
+
+export interface LearningProgress {
+  totalTheorems: number
+  learnedTheorems: number
+  masteredTheorems: number
+  currentStreak: number
+  lastStudyTime: number
+}
+
+// ==================== 数字人类型 ====================
+export type AvatarState =
+  | 'offline'
+  | 'online'
+  | 'idle'
+  | 'interactive_idle'
+  | 'listen'
+  | 'think'
+  | 'speak'
+
+export interface SpeakOptions {
+  text: string
+  isStart?: boolean
+  isEnd?: boolean
+}
+
+// ==================== RAG 类型 ====================
+export interface Document {
+  id: string
+  content: string
+  metadata: Record<string, any>
+}
+
+export interface EmbeddingVector {
+  id: string
+  vector: number[]
+  metadata: Record<string, any>
+}
+
+// ==================== 错误类型 ====================
+export interface ApiError {
+  code: string
+  message: string
+  details?: any
+}
+
+// ==================== 常量类型 ====================
+export const SUBJECT_CATEGORIES: SubjectCategory[] = ['math', 'physics', 'chemistry', 'biology', 'logic', 'health']
+
+export const DIFFICULTY_LEVELS: DifficultyLevel[] = ['基础', '进阶', '精通']
+
+export const SUBJECT_NAMES: Record<SubjectCategory, string> = {
+  math: '数学',
+  physics: '物理',
+  chemistry: '化学',
+  biology: '生物',
+  logic: '逻辑',
+  health: '健康咨询'
+}
+
+export const DIFFICULTY_COLORS: Record<DifficultyLevel, string> = {
+  基础: 'bg-green-100 text-green-700',
+  进阶: 'bg-yellow-100 text-yellow-700',
+  精通: 'bg-red-100 text-red-700'
 }

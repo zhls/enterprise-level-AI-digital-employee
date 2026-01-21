@@ -20,12 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Path aliases */
+    /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/client/*"]
+      "@/*": ["./src/client/*"],
+      "@server/*": ["./src/server/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["src/client"],
-  "references": [{ "path": "./tsconfig.server.json" }]
+  "include": ["src/client", "src/server", "src/shared"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,350 @@
+[
+  {
+    "id": "health_sleep_001",
+    "category": "health",
+    "subject": "健康咨询",
+    "topic": "睡眠调理",
+    "theorem": "改善失眠的饮食调理方法",
+    "difficulty": "基础",
+    "description": "通过合理的饮食调整，可以有效改善失眠症状，提高睡眠质量。",
+    "formula": "",
+    "formulaLatex": "",
+    "visualization": {
+      "type": "health",
+      "description": "失眠改善饮食建议",
+      "widgets": [
+        "food_list",
+        "sleep_tips"
+      ]
+    },
+    "proofSteps": [],
+    "examples": [
+      {
+        "problem": "如何通过饮食改善失眠？",
+        "solution": "1. 晚餐避免辛辣、油腻食物；2. 睡前2小时内避免进食；3. 适量食用有助于睡眠的食物如牛奶、香蕉、燕麦等；4. 限制咖啡因和酒精摄入；5. 保持规律的饮食习惯。",
+        "steps": [
+          "调整晚餐时间和内容",
+          "避免睡前过饱或饥饿",
+          "选择助眠食物",
+          "限制兴奋性饮品",
+          "建立规律饮食节奏"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      {
+        "mistake": "睡前大量进食",
+        "correction": "睡前2-3小时应避免大量进食，以免加重肠胃负担，影响睡眠"
+      },
+      {
+        "mistake": "睡前饮用咖啡或茶",
+        "correction": "咖啡因的半衰期较长，睡前6小时内应避免饮用含咖啡因的饮品"
+      }
+    ],
+    "socraticQuestions": [
+      "你平时的晚餐时间和内容是怎样的？",
+      "你睡前有哪些习惯可能影响睡眠？",
+      "你尝试过哪些助眠方法？效果如何？"
+    ],
+    "prerequisites": [
+      "基本饮食常识",
+      "睡眠卫生知识"
+    ],
+    "relatedTheorems": [
+      "health_sleep_002",
+      "health_nutrition_001"
+    ],
+    "teachingTips": [
+      "结合个人饮食习惯给出建议",
+      "强调长期坚持的重要性",
+      "建议记录睡眠日记观察效果"
+    ],
+    "keywords": [
+      "失眠",
+      "饮食调理",
+      "助眠食物",
+      "睡眠质量",
+      "饮食规律"
+    ],
+    "embeddingText": "改善失眠 饮食调理 助眠食物 睡眠质量 咖啡因 酒精 规律饮食 牛奶 香蕉 燕麦"
+  },
+  {
+    "id": "health_nutrition_001",
+    "category": "health",
+    "subject": "健康咨询",
+    "topic": "营养膳食",
+    "theorem": "适合上班族的健康食谱",
+    "difficulty": "基础",
+    "description": "针对上班族的生活特点，设计营养均衡、易于准备的健康食谱。",
+    "formula": "",
+    "formulaLatex": "",
+    "visualization": {
+      "type": "health",
+      "description": "上班族健康食谱",
+      "widgets": [
+        "meal_plan",
+        "nutrition_info"
+      ]
+    },
+    "proofSteps": [],
+    "examples": [
+      {
+        "problem": "推荐一份适合上班族的健康食谱",
+        "solution": "早餐：燕麦粥+煮鸡蛋+新鲜水果；午餐：杂粮饭+清蒸鱼+凉拌蔬菜；下午茶：坚果+酸奶；晚餐：小米粥+炒鸡胸肉+清炒时蔬。",
+        "steps": [
+          "早餐：保证碳水化合物、蛋白质和维生素摄入",
+          "午餐：均衡营养，保证能量供应",
+          "下午茶：补充能量，避免晚餐过饿",
+          "晚餐：清淡易消化，避免过饱"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      {
+        "mistake": "不吃早餐",
+        "correction": "早餐是一天中最重要的一餐，应保证营养均衡，为上午的工作提供能量"
+      },
+      {
+        "mistake": "晚餐过于丰盛",
+        "correction": "晚餐应清淡易消化，避免大量油脂和蛋白质，以免影响睡眠和消化"
+      }
+    ],
+    "socraticQuestions": [
+      "你现在的饮食习惯是怎样的？",
+      "你在饮食方面有哪些困扰？",
+      "你对饮食健康有哪些具体要求？"
+    ],
+    "prerequisites": [
+      "基本营养知识",
+      "上班族生活特点"
+    ],
+    "relatedTheorems": [
+      "health_nutrition_002",
+      "health_sleep_001"
+    ],
+    "teachingTips": [
+      "结合个人口味和饮食习惯调整",
+      "建议提前准备，避免外卖依赖",
+      "强调食物多样性"
+    ],
+    "keywords": [
+      "上班族",
+      "健康食谱",
+      "营养均衡",
+      "饮食规律",
+      "外卖替代"
+    ],
+    "embeddingText": "上班族 健康食谱 营养均衡 早餐 午餐 晚餐 燕麦 鸡蛋 水果 杂粮饭 清蒸鱼 鸡胸肉 蔬菜 酸奶 坚果"
+  },
+  {
+    "id": "health_exercise_001",
+    "category": "health",
+    "subject": "健康咨询",
+    "topic": "运动健身",
+    "theorem": "适合办公室的简单健身动作",
+    "difficulty": "基础",
+    "description": "在办公室有限的空间内，通过简单的健身动作缓解疲劳，预防职业病。",
+    "formula": "",
+    "formulaLatex": "",
+    "visualization": {
+      "type": "health",
+      "description": "办公室健身动作",
+      "widgets": [
+        "exercise_demo",
+        "posture_correction"
+      ]
+    },
+    "proofSteps": [],
+    "examples": [
+      {
+        "problem": "适合办公室的简单健身动作",
+        "solution": "1. 颈部伸展：左右转动颈部，缓解颈椎压力；2. 肩部环绕：前后环绕肩部，放松肩部肌肉；3. 坐姿拉伸：伸展腿部和背部肌肉；4. 手腕操：活动手腕，预防鼠标手；5. 收腹运动：收紧腹部，增强核心力量。",
+        "steps": [
+          "颈部放松运动",
+          "肩部放松运动",
+          "上下肢拉伸",
+          "手腕关节活动",
+          "核心力量训练"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      {
+        "mistake": "长时间保持同一姿势",
+        "correction": "每30分钟应起身活动一次，避免肌肉僵硬和血液循环不畅"
+      },
+      {
+        "mistake": "运动幅度过大",
+        "correction": "办公室健身动作应缓慢柔和，避免剧烈运动影响他人或造成损伤"
+      }
+    ],
+    "socraticQuestions": [
+      "你在办公室的工作姿势是怎样的？",
+      "你是否有肩颈或腰部不适？",
+      "你平时有哪些运动习惯？"
+    ],
+    "prerequisites": [
+      "基本运动知识",
+      "办公室工作特点"
+    ],
+    "relatedTheorems": [
+      "health_exercise_002",
+      "health_posture_001"
+    ],
+    "teachingTips": [
+      "建议设置闹钟提醒定时活动",
+      "强调正确的姿势比运动更重要",
+      "鼓励循序渐进，逐渐增加运动强度"
+    ],
+    "keywords": [
+      "办公室",
+      "健身动作",
+      "职业病预防",
+      "颈椎保健",
+      "肩部放松"
+    ],
+    "embeddingText": "办公室 健身动作 颈椎 肩部 腰椎 鼠标手 拉伸 伸展 核心力量 坐姿 姿势矫正"
+  },
+  {
+    "id": "health_stress_001",
+    "category": "health",
+    "subject": "健康咨询",
+    "topic": "心理健康",
+    "theorem": "缓解工作压力的有效方法",
+    "difficulty": "基础",
+    "description": "通过科学的方法缓解工作压力，保持心理健康和工作效率。",
+    "formula": "",
+    "formulaLatex": "",
+    "visualization": {
+      "type": "health",
+      "description": "压力缓解方法",
+      "widgets": [
+        "stress_management",
+        "relaxation_techniques"
+      ]
+    },
+    "proofSteps": [],
+    "examples": [
+      {
+        "problem": "如何缓解工作压力？",
+        "solution": "1. 时间管理：合理安排工作优先级，避免拖延；2. 深呼吸放松：通过深呼吸调节情绪；3. 适当运动：释放压力，增强体质；4. 寻求支持：与同事或朋友交流；5. 培养兴趣爱好：丰富业余生活。",
+        "steps": [
+          "优化工作方法",
+          "学习放松技巧",
+          "保持适量运动",
+          "建立支持系统",
+          "平衡工作与生活"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      {
+        "mistake": "忽视压力信号",
+        "correction": "应及时识别压力信号，如失眠、焦虑、疲劳等，采取相应措施"
+      },
+      {
+        "mistake": "过度工作",
+        "correction": "应合理安排工作时间，避免长时间连续工作，保证休息时间"
+      }
+    ],
+    "socraticQuestions": [
+      "你感到压力大的主要原因是什么？",
+      "你平时如何应对压力？",
+      "压力对你的生活和工作有哪些影响？"
+    ],
+    "prerequisites": [
+      "基本心理知识",
+      "工作压力管理"
+    ],
+    "relatedTheorems": [
+      "health_stress_002",
+      "health_sleep_001"
+    ],
+    "teachingTips": [
+      "建议根据个人情况选择适合的减压方法",
+      "强调长期坚持的重要性",
+      "鼓励寻求专业帮助（如心理咨询）"
+    ],
+    "keywords": [
+      "工作压力",
+      "缓解方法",
+      "时间管理",
+      "深呼吸",
+      "运动",
+      "心理健康"
+    ],
+    "embeddingText": "工作压力 缓解方法 时间管理 深呼吸 运动 心理咨询 失眠 焦虑 疲劳 兴趣爱好 生活平衡"
+  },
+  {
+    "id": "health_chronic_001",
+    "category": "health",
+    "subject": "健康咨询",
+    "topic": "慢病管理",
+    "theorem": "高血压患者的日常注意事项",
+    "difficulty": "基础",
+    "description": "高血压患者通过合理的日常管理，可以有效控制血压，减少并发症的发生。",
+    "formula": "",
+    "formulaLatex": "",
+    "visualization": {
+      "type": "health",
+      "description": "高血压管理",
+      "widgets": [
+        "blood_pressure_monitoring",
+        "diet_tips"
+      ]
+    },
+    "proofSteps": [],
+    "examples": [
+      {
+        "problem": "高血压患者的日常注意事项",
+        "solution": "1. 定期测量血压，记录血压变化；2. 遵循医嘱服药，不可擅自停药或调整剂量；3. 低盐饮食，每日盐摄入量不超过5克；4. 适量运动，避免剧烈运动；5. 戒烟限酒；6. 保持良好的心态，避免情绪波动；7. 保证充足的睡眠。",
+        "steps": [
+          "血压监测",
+          "药物治疗",
+          "饮食调整",
+          "适量运动",
+          "生活方式改变",
+          "情绪管理",
+          "睡眠保障"
+        ]
+      }
+    ],
+    "commonMistakes": [
+      {
+        "mistake": "血压正常后擅自停药",
+        "correction": "高血压是慢性病，需要长期治疗，血压正常是药物作用的结果，应在医生指导下调整用药"
+      },
+      {
+        "mistake": "饮食中盐摄入量过高",
+        "correction": "过多的盐会导致血压升高，应严格控制盐的摄入量，包括隐形盐（如酱油、咸菜等）"
+      }
+    ],
+    "socraticQuestions": [
+      "你平时的血压控制情况如何？",
+      "你是否按照医嘱服药？",
+      "你的饮食习惯是怎样的？"
+    ],
+    "prerequisites": [
+      "高血压基础知识",
+      "慢性病管理原则"
+    ],
+    "relatedTheorems": [
+      "health_chronic_002",
+      "health_nutrition_001"
+    ],
+    "teachingTips": [
+      "强调遵医嘱的重要性",
+      "建议家属参与管理",
+      "鼓励定期复诊"
+    ],
+    "keywords": [
+      "高血压",
+      "日常注意事项",
+      "血压监测",
+      "低盐饮食",
+      "药物治疗",
+      "运动"
+    ],
+    "embeddingText": "高血压 血压监测 低盐饮食 药物治疗 运动 戒烟限酒 情绪管理 睡眠 并发症 医生指导"
+  }
+]
