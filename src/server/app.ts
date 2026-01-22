@@ -36,7 +36,7 @@ app.use('/api/avatar', avatarRoutes)
 app.get('/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'real-time-interactive-education',
+    service: 'enterprise-level-AI-digital-employee',
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
   })
@@ -60,7 +60,7 @@ if (process.env.NODE_ENV === 'production' && !process.env.VITE) {
   app.listen(PORT, () => {
     console.log(``)
     console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)
-    console.log(`  学科辅导服务启动成功`)
+    console.log(`  健康咨询助手服务启动成功`)
     console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)
     console.log(`  服务地址: http://localhost:${PORT}`)
     console.log(`  API 端点: http://localhost:${PORT}/api`)

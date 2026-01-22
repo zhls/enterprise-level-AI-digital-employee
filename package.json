@@ -1,7 +1,7 @@
 {
-  "name": "real-time-interactive-education",
+  "name": "enterprise-level-AI-digital-employee",
   "version": "1.0.0",
-  "description": "学科辅导：直观讲解定理，引导独立思考 - 魔珐星云黑客松项目",
+  "description": "健康咨询助手：直观讲解健康知识，引导独立思考 - 魔珐星云黑客松项目",
   "type": "module",
   "scripts": {
     "dev": "vite",

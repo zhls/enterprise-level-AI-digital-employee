@@ -98,7 +98,7 @@ XMOV_APP_SECRET=your_app_secret_here
 npm run dev
 ```
 
-访问 http://localhost:5177 查看应用。
+访问 http://localhost:5175 查看应用。
 
 ## 核心功能
 

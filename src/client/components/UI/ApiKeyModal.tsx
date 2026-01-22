@@ -9,8 +9,8 @@ interface ApiKeyModalProps {
 // 内置演示密钥
 const DEMO_KEYS = {
   modelScopeApiKey: 'ms-7634b763-a22e-4be8-94ca-912ff438add1',
-  xmovAppId: '8ad755402aad4c62b7db0fd1d20cdbc1',
-  xmovAppSecret: 'e23ecee1c318471fb1db64f5a36d36e6'
+  xmovAppId: '5547d97be12c405da49102ef4b2d8e8c',
+  xmovAppSecret: '3045d57474ee4768ab376023e61619e1'
 }
 
 type ValidationStatus = 'idle' | 'validating' | 'valid' | 'invalid'
