@@ -107,11 +107,23 @@ export const ApiKeyModal: React.FC<ApiKeyModalProps> = ({ onClose }) => {
 
   // 使用演示密钥
   const handleUseDemoKeys = () => {
-    setModelScopeApiKey(DEMO_KEYS.modelScopeApiKey)
-    setXmovAppId(DEMO_KEYS.xmovAppId)
-    setXmovAppSecret(DEMO_KEYS.xmovAppSecret)
+    setIsLoading(true)
     setError('')
-    onClose()
+    
+    try {
+      // 直接保存演示密钥到store和localStorage
+      setKeys({
+        modelScopeApiKey: DEMO_KEYS.modelScopeApiKey,
+        xmovAppId: DEMO_KEYS.xmovAppId,
+        xmovAppSecret: DEMO_KEYS.xmovAppSecret
+      })
+      
+      setIsLoading(false)
+      onClose()
+    } catch (err: any) {
+      setError(err.message || '保存演示密钥失败')
+      setIsLoading(false)
+    }
   }
 
   return (
