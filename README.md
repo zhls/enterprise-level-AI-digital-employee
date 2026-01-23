@@ -70,7 +70,7 @@ enterprise-level-AI-digital-employee/
 
 ### 1. 环境准备
 
-- Node.js 24.11.1
+- Node.js 18.x 或更高版本
 - npm 或 yarn
 
 ### 2. 安装依赖

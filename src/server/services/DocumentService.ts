@@ -73,30 +73,35 @@ export class DocumentService {
 
   /**
    * 解析PDF文件
-   * 注意：这是一个简化版本，实际应用中可能需要使用 pdf-parse 或 pdfjs-dist
+   * 使用 pdf-parse 库解析PDF文档内容
    */
   private async parsePdfFile(filePath: string): Promise<{ title: string; content: string; type: string }> {
     const filename = path.basename(filePath)
-
-    // 简化版：提示需要安装PDF解析库
-    // 实际应用中可以使用 pdf-parse: npm install pdf-parse
-    throw new Error('PDF解析功能需要安装 pdf-parse 库。请使用 pdf-parse 或将PDF转换为文本格式后上传。')
-
-    /* 完整实现示例（需要安装 pdf-parse）:
-    import pdf from 'pdf-parse'
-
+    
+    // 使用动态导入，并获取 PDFParse 类
+    const pdfParseModule = await import('pdf-parse')
+    const { PDFParse } = pdfParseModule
+    
+    // 读取PDF文件内容
     const dataBuffer = fs.readFileSync(filePath)
-    const data = await pdf(dataBuffer)
-
-    const lines = data.text.split('\n').filter(line => line.trim())
+    
+    // 创建 PDFParse 实例
+    const pdfParse = new PDFParse({
+      data: dataBuffer
+    })
+    
+    // 提取文本内容
+    const textResult = await pdfParse.getText()
+    
+    // 尝试从内容中提取标题（第一行）
+    const lines = textResult.text.split('\n').filter(line => line.trim())
     const title = lines[0] || filename
-
+    
     return {
       title: title.trim(),
-      content: data.text.trim(),
+      content: textResult.text.trim(),
       type: 'pdf'
     }
-    */
   }
 
   /**
