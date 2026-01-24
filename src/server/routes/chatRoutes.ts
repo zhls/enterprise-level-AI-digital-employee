@@ -3,7 +3,7 @@ import multer from 'multer'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import chatService from '../services/ChatService.ts'
+import chatService from '../services/chatService.ts'
 import modelscopeService from '../services/ModelScopeService.ts'
 
 const __filename = fileURLToPath(import.meta.url)
